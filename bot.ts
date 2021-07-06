@@ -90,8 +90,7 @@ async function main() {
                 .setTitle(eventName)
                 .setDescription("\u200B")
                 .addField("Pool ID", i.toString(), true)
-                .addField("Asset", asset.underlyingSymbol, true)
-                .setTimestamp();
+                .addField("Asset", asset.underlyingSymbol, true);
 
               if (eventName === "Mint") {
                 embed = embed

@@ -88,7 +88,7 @@ async function main() {
             ) {
               let embed = new MessageBuilder()
                 .setTitle(eventName)
-                .setDescription(`by \`${event.returnValues["0"]}\` \n\u200B`) // Return value '0' is always the from address.
+                .setDescription(`from \`${event.returnValues["0"]}\` \n\u200B`) // Return value '0' is always the from address.
                 .addField("Pool ID", i.toString(), true)
                 .addField("Asset", asset.underlyingSymbol, true)
                 .setTimestamp();

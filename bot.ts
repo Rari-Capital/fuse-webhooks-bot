@@ -88,7 +88,7 @@ async function main() {
             ) {
               let embed = new MessageBuilder()
                 .setTitle(eventName)
-                .setDescription("\u200B")
+                .setDescription(`by \`${event.returnValues.from}\` \n\u200B`)
                 .addField("Pool ID", i.toString(), true)
                 .addField("Asset", asset.underlyingSymbol, true)
                 .setTimestamp();

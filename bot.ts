@@ -16,8 +16,6 @@ hook.setAvatar(
 );
 
 const smallFormatter = Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
   minimumFractionDigits: 2,
   maximumFractionDigits: 2
 });
@@ -89,10 +87,10 @@ async function main() {
               eventName != "Failure"
             ) {
               let embed = new MessageBuilder()
-                .addField("Event Name", eventName, true)
+                .setTitle(eventName)
+                .setDescription("\u200B")
                 .addField("Pool ID", i.toString(), true)
-                .addField("Underlying", asset.underlyingSymbol, true)
-                .setColor(0x42c346)
+                .addField("Asset", asset.underlyingSymbol, true)
                 .setTimestamp();
 
               if (eventName === "Mint") {
@@ -162,7 +160,7 @@ async function main() {
 
               hook.send(
                 embed.addField(
-                  "Link",
+                  "\u200B",
                   "https://etherscan.io/tx/" + event.transactionHash
                 )
               );
@@ -172,6 +170,7 @@ async function main() {
       });
   }
 }
+
 main();
 
 // Prevent node from exiting early.

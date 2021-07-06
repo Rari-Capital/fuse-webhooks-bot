@@ -145,7 +145,7 @@ async function main() {
                   .setColor(0xdb4152);
               }
 
-              if (event === "LiquidateBorrow") {
+              if (eventName === "LiquidateBorrow") {
                 embed = embed
                   .addField(
                     "Amount",

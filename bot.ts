@@ -4,7 +4,7 @@ import { MessageBuilder, Webhook } from "discord-webhook-node";
 
 import Fuse from "./fuse.node.commonjs2.js";
 const fuse = new Fuse(
-  "wss://eth-mainnet.ws.alchemyapi.io/v2/oAvEoLnipU2C4c8WrfOaXlNntcIMT3FV"
+  "wss://eth-mainnet.ws.alchemyapi.io/v2/hyzY6NPaP88J5E8UJKYoiUi2i_a4O7l4"
 );
 
 console.log("Connecting to Discord Webhook:", process.env.WEBHOOK_URL);

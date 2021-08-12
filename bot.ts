@@ -58,6 +58,11 @@ async function main() {
     .call({ gas: 1e18 });
 
   for (let i = 0; i < fusePools.length; i++) {
+    if (i == 4) {
+      // Pool 4 is broken, we'll just skip it for now.
+      continue;
+    }
+
     fuse.contracts.FusePoolLens.methods
       .getPoolAssetsWithData(fusePools[i].comptroller)
       .call({

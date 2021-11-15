@@ -54,7 +54,7 @@ export interface FuseAsset {
 
 async function main() {
   const { 1: fusePools } = await fuse.contracts.FusePoolLens.methods
-    .getPublicPoolsWithData()
+    .getPublicPoolsByVerificationWithData(true)
     .call({ gas: 1e18 });
 
   for (let i = 0; i < fusePools.length; i++) {

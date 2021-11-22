@@ -94,7 +94,7 @@ async function main() {
               let embed = new MessageBuilder()
                 .setTitle(eventName)
                 .setDescription(`from \`${event.returnValues["0"]}\` \n\u200B`) // Return value '0' is always the from address.
-                .addField("Pool ID", i.toString(), true)
+                .addField("Pool", filterPoolName(fusePools[i].name), true)
                 .addField("Asset", asset.underlyingSymbol, true)
                 .setTimestamp();
 
@@ -180,3 +180,36 @@ main();
 
 // Prevent node from exiting early.
 process.stdin.resume();
+
+// Keep this in sync with the version in https://github.com/Rari-Capital/rari-dApp/blob/master/src/utils/fetchFusePoolData.ts
+function filterPoolName(name: string) {
+  if (name === "Tetranode's Pool") {
+    return "Tetranode's Locker";
+  }
+
+  if (name === "state's pool") {
+    return "Ribbon Pool";
+  }
+
+  if (name === "Stake DAO Pool") {
+    return "The Animal Kingdom";
+  }
+
+  if (name === "Tetranode's ETH Pool") {
+    return "ChainLinkGod's / Tetranode's Up Only Pool";
+  }
+
+  if (name === "Tetranode's Flavor of the Month") {
+    return "FeiRari (Fei DAO Pool)";
+  }
+
+  if (name === "WOO pool") {
+    return "Warlord's WOO Pool";
+  }
+
+  if (name === "Yearn's Yield") {
+    return "Yearn Soup Pot of Yield";
+  }
+
+  return name;
+}
